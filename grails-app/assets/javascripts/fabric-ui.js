@@ -6,6 +6,18 @@ console.log(canvas.width);
 
 var shapeColor = 'red';
 
+$(document).ready(function()
+{
+    var $colorPicker = $('#colorPicker');
+    $colorPicker.tinycolorpicker();
+
+    $colorPicker.bind("change", function(event, color)
+    {
+        shapeColor = color;
+    });
+
+});
+
 function addSquare() {
     var rect = new fabric.Rect({
         top : random(canvas.height),

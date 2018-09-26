@@ -3,6 +3,8 @@
 <head>
     <meta name="layout" content="main"/>
     <title>Welcome to Grails</title>
+    
+
 </head>
 <body>
     <content tag="nav">
@@ -61,6 +63,12 @@
                 <button type="button" class="btn btn-primary" onclick="addCircle();">Circle</button>
                 <button type="button" class="btn btn-primary" onclick="addEllipse();">Ellipse</button>
                 <button type="button" class="btn btn-primary" onclick="addStar();">Star</button>
+                <div id="colorPicker">
+                    <a class="color"><div class="colorInner"></div></a>
+                    <div class="track"></div>
+                    <ul class="dropdown"><li></li></ul>
+                    <input type="hidden" class="colorInput"/>
+                </div>
                 <button type="button" class="btn btn-primary" onclick="remove();">Remove</button>
                 <button type="button" class="btn btn-primary" onclick="download();">Download</button>
             </div>
