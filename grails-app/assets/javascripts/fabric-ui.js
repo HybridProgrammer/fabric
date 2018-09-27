@@ -1,19 +1,61 @@
 var canvas = new fabric.Canvas('canvas');
+
 var canvasElement = $("#canvas");
 
 console.log(canvas.height);
 console.log(canvas.width);
 
 var shapeColor = 'red';
+var pallet = [];
+var palletShapes = [];
 
 $(document).ready(function()
 {
+    var shape = new fabric.Canvas('canvasSquare');
+    shape.hoverCursor = 'pointer';
+    pallet.push(shape);
+
+
+    var shapeImage = new fabric.Rect({
+        top : 15,
+        left : 15,
+        width : 70,
+        height : 70,
+        fill : shapeColor
+    });
+    shapeImage.set('selectable', false);
+    palletShapes.push(shapeImage);
+
+    shape.add(shapeImage);
+
+    shape = new fabric.Canvas('canvasRectangle');
+    shape.hoverCursor = 'pointer';
+    pallet.push(shape);
+
+    shapeImage =  new fabric.Rect({
+        top : 15,
+        left : 15,
+        width : 70,
+        height : 35,
+        fill : shapeColor
+    });
+    shapeImage.set('selectable', false);
+    palletShapes.push(shapeImage);
+
+    shape.add(shapeImage);
+
     var $colorPicker = $('#colorPicker');
     $colorPicker.tinycolorpicker();
 
     $colorPicker.bind("change", function(event, color)
     {
         shapeColor = color;
+        palletShapes.forEach(function (value) {
+            value.set('fill', color);
+        });
+        pallet.forEach(function (value) {
+            value.renderAll();
+        });
     });
 
 });

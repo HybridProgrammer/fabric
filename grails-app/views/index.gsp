@@ -56,7 +56,25 @@
             </div>
             <div class="col-md-4">
                 <h2>Pallet</h2>
-                <button type="button" class="btn btn-primary" onclick="addSquare();">Square</button>
+                <table class="table table-borderless">
+                    <tbody>
+                    <tr>
+                        <td onclick="addSquare();">
+                            <canvas id="canvasSquare" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Square</strong>
+                        </td>
+                        <td onclick="addRectangle();">
+                            <canvas id="canvasRectangle" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Rectangle</strong>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div>
+
+                </div>
+
+
                 <button type="button" class="btn btn-primary" onclick="addRectangle();">Rectangle</button>
                 <button type="button" class="btn btn-primary" onclick="addTriangle();">Triangle</button>
                 <button type="button" class="btn btn-primary" onclick="addTrapezoid();">Trapezoid</button>
