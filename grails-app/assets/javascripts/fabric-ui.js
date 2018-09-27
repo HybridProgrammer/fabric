@@ -11,11 +11,6 @@ var palletShapes = [];
 
 $(document).ready(function()
 {
-    var shape = new fabric.Canvas('canvasSquare');
-    shape.hoverCursor = 'pointer';
-    pallet.push(shape);
-
-
     var shapeImage = new fabric.Rect({
         top : 15,
         left : 15,
@@ -23,14 +18,7 @@ $(document).ready(function()
         height : 70,
         fill : shapeColor
     });
-    shapeImage.set('selectable', false);
-    palletShapes.push(shapeImage);
-
-    shape.add(shapeImage);
-
-    shape = new fabric.Canvas('canvasRectangle');
-    shape.hoverCursor = 'pointer';
-    pallet.push(shape);
+    addToPallet(shapeImage, 'canvasSquare');
 
     shapeImage =  new fabric.Rect({
         top : 15,
@@ -39,10 +27,17 @@ $(document).ready(function()
         height : 35,
         fill : shapeColor
     });
-    shapeImage.set('selectable', false);
-    palletShapes.push(shapeImage);
+    addToPallet(shapeImage, 'canvasRectangle');
 
-    shape.add(shapeImage);
+    shapeImage =  new fabric.Triangle({
+        top: 15,
+        left: 15,
+        width: 75,
+        height: 75,
+        fill: shapeColor,
+        strokeWidth: 2
+    });
+    addToPallet(shapeImage, 'canvasTriangle');
 
     var $colorPicker = $('#colorPicker');
     $colorPicker.tinycolorpicker();
@@ -59,6 +54,17 @@ $(document).ready(function()
     });
 
 });
+
+function addToPallet(shapeImage, canvas) {
+    var shape = new fabric.Canvas(canvas);
+    shape.hoverCursor = 'pointer';
+    pallet.push(shape);
+
+    shapeImage.set('selectable', false);
+    palletShapes.push(shapeImage);
+
+    shape.add(shapeImage);
+}
 
 function addSquare() {
     var rect = new fabric.Rect({
@@ -91,7 +97,6 @@ function addTriangle() {
         width: 200,
         height: 100,
         fill: shapeColor,
-        stroke: 'blue',
         strokeWidth: 2
     });
 

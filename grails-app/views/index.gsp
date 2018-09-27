@@ -67,6 +67,10 @@
                             <canvas id="canvasRectangle" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
                             <strong style="margin-left: 15px">Rectangle</strong>
                         </td>
+                        <td onclick="addTriangle();">
+                            <canvas id="canvasTriangle" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Triangle</strong>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
