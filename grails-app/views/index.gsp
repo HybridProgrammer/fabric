@@ -2,9 +2,31 @@
 <html>
 <head>
     <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <title>Fabric Designer</title>
     
-
+    <style>
+        .color-box {
+            float: left;
+            border: 1px solid gray;
+            width: 40px;
+            height: 40px;
+            margin-left: 1px;
+            cursor: pointer;
+            padding-top: 5px;
+            padding-left: 3px;
+        }
+        .color-box-horizontal {
+            float: left;
+            border: 1px solid gray;
+            width: 100px;
+            height: 40px;
+            margin-left: 1px;
+            cursor: pointer;
+            padding-top: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <content tag="nav">
@@ -72,19 +94,38 @@
                             <strong style="margin-left: 15px">Triangle</strong>
                         </td>
                     </tr>
+                    <tr>
+                        <td onclick="addTrapezoid();">
+                            <canvas id="canvasTrapezoid" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Trapezoid</strong>
+                        </td>
+                        <td onclick="addCircle();">
+                            <canvas id="canvasCircle" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Circle</strong>
+                        </td>
+                        <td onclick="addEllipse();">
+                            <canvas id="canvasEllipse" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Ellipse</strong>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="addStar();">
+                            <canvas id="canvasStar" width="100" height="100" style="border: 1px solid gray; display: block;"></canvas>
+                            <strong style="margin-left: 15px">Star</strong>
+                        </td>
+                        <td>
+
+                        </td>
+                        <td>
+                            
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
-                <div>
+                <div class="color-box" style="background: red;">Red</div>
+                <div class="color-box" style="background: blue;">Blue</div>
 
-                </div>
-
-
-                <button type="button" class="btn btn-primary" onclick="addRectangle();">Rectangle</button>
-                <button type="button" class="btn btn-primary" onclick="addTriangle();">Triangle</button>
-                <button type="button" class="btn btn-primary" onclick="addTrapezoid();">Trapezoid</button>
-                <button type="button" class="btn btn-primary" onclick="addCircle();">Circle</button>
-                <button type="button" class="btn btn-primary" onclick="addEllipse();">Ellipse</button>
-                <button type="button" class="btn btn-primary" onclick="addStar();">Star</button>
+                
                 <div id="colorPicker">
                     <a class="color"><div class="colorInner"></div></a>
                     <div class="track"></div>
@@ -93,6 +134,11 @@
                 </div>
                 <button type="button" class="btn btn-primary" onclick="remove();">Remove</button>
                 <button type="button" class="btn btn-primary" onclick="download();">Download</button>
+            </div>
+            <div class="col-md-2">
+                <h2>Colors</h2>
+                <div class="color-box-horizontal" style="background: red;" onclick="changeColor(this);">Red</div>
+                <div class="color-box-horizontal" style="background: blue;" onclick="changeColor(this);">Blue</div>
             </div>
         </div>
         </section>
